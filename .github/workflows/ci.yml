@@ -1,0 +1,30 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      
+      - name: Install & Audit
+        run: |
+          npm ci
+          npm audit --audit-level=high
+          
+      - name: Quality Checks
+        run: |
+          npm run typecheck
+          npm run lint
+          
+      - name: Unit & E2E Tests
+        run: |
+          npm test -- --coverage
+          npm run test:e2e

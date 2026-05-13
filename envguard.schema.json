@@ -1,0 +1,18 @@
+{
+  "$version": "1",
+  "vars": {
+    "PORT": {
+      "type": "number",
+      "default": 3000
+    },
+    "NODE_ENV": {
+      "type": "enum",
+      "values": [
+        "development",
+        "production",
+        "test"
+      ],
+      "required": true
+    }
+  }
+}
