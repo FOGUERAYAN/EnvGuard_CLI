@@ -50,7 +50,7 @@ Commande : `npm run build`
 Result : 
 <details>
 
-  <summary>Cliquez pour voir les tests unitaires (Jest)</summary>
+  <summary>Cliquez pour voir les resultats</summary>
 
   <img src="./docs/screenshots/1.png" alt="Tests Unitaires">
 
@@ -63,7 +63,7 @@ Commande : `npm test -- --coverage`
 Result : 
 <details>
 
-  <summary>Cliquez pour voir les tests unitaires (Jest)</summary>
+  <summary>Cliquez pour voir les resultats</summary>
 
   <img src="./docs/screenshots/2.png" alt="Tests Unitaires">
 
@@ -76,7 +76,7 @@ Commande : `npm run test:e2e`
 Result : 
 <details>
 
-  <summary>Cliquez pour voir les tests unitaires (Jest)</summary>
+  <summary>Cliquez pour voir les resultats</summary>
 
   <img src="./docs/screenshots/3.png" alt="Tests Unitaires">
 
@@ -89,7 +89,7 @@ Commande : `npm run typecheck`
 Result : 
 <details>
 
-  <summary>Cliquez pour voir les tests unitaires (Jest)</summary>
+  <summary>Cliquez pour voir les resultats</summary>
 
   <img src="./docs/screenshots/4.png" alt="Tests Unitaires">
 
@@ -102,7 +102,7 @@ Commande : `npm run lint`
 Result : 
 <details>
 
-  <summary>Cliquez pour voir les tests unitaires (Jest)</summary>
+  <summary>Cliquez pour voir les resultats</summary>
 
   <img src="./docs/screenshots/5.png" alt="Tests Unitaires">
 
@@ -115,7 +115,7 @@ Commande : `node dist/cli.js init`
 Result : 
 <details>
 
-  <summary>Cliquez pour voir les tests unitaires (Jest)</summary>
+  <summary>Cliquez pour voir les resultats</summary>
 
   <img src="./docs/screenshots/6.png" alt="Tests Unitaires">
 
@@ -128,7 +128,7 @@ Commande : `node dist/cli.js validate`
 Result : 
 <details>
 
-  <summary>Cliquez pour voir les tests unitaires (Jest)</summary>
+  <summary>Cliquez pour voir les resultats</summary>
 
   <img src="./docs/screenshots/7.png" alt="Tests Unitaires">
 
@@ -141,7 +141,7 @@ Commande : `node dist/cli.js validate --schema ./envguard.schema.json --env .env
 Result : 
 <details>
 
-  <summary>Cliquez pour voir les tests unitaires (Jest)</summary>
+  <summary>Cliquez pour voir les resultats</summary>
 
   <img src="./docs/screenshots/8.png" alt="Tests Unitaires">
 
@@ -154,7 +154,7 @@ Commande : `node dist/cli.js diff .env .env.example`
 Result : 
 <details>
 
-  <summary>Cliquez pour voir les tests unitaires (Jest)</summary>
+  <summary>Cliquez pour voir les resultats</summary>
 
   <img src="./docs/screenshots/9.png" alt="Tests Unitaires">
 
@@ -167,7 +167,7 @@ Commande : `node dist/cli.js validate --ci`
 Result : 
 <details>
 
-  <summary>Cliquez pour voir les tests unitaires (Jest)</summary>
+  <summary>Cliquez pour voir les resultats</summary>
 
   <img src="./docs/screenshots/10.png" alt="Tests Unitaires">
 
