@@ -3,7 +3,8 @@
   "vars": {
     "PORT": {
       "type": "number",
-      "default": 3000
+      "min": 3000,
+      "max": 4000
     },
     "NODE_ENV": {
       "type": "enum",

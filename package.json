@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "bin": {
-    "project-1": "./dist/cli.js"
+    "envguard": "./dist/cli.js"
   },
   "main": "./dist/cli.js",
   "module": "./dist/cli.js",
