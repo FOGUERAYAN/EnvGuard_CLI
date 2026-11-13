@@ -3,19 +3,28 @@ import path from 'node:path';
 import pc from 'picocolors';
 
 const STARTER_SCHEMA = {
-  $version: "1",
+  $version: '1',
   vars: {
-    PORT: { type: "number", default: 3000 },
-    NODE_ENV: { type: "enum", values: ["development", "production", "test"], required: true }
-  }
+    PORT: { type: 'number', default: 3000 },
+    NODE_ENV: {
+      type: 'enum',
+      values: ['development', 'production', 'test'],
+      required: true,
+    },
+  },
 };
 
 export async function initAction(options: { force: boolean }): Promise<number> {
   const target = path.join(process.cwd(), 'envguard.schema.json');
-  
-  const exists = await fs.access(target).then(() => true).catch(() => false);
+
+  const exists = await fs
+    .access(target)
+    .then(() => true)
+    .catch(() => false);
   if (exists && !options.force) {
-    process.stderr.write(pc.red('Le fichier existe déjà. Utilisez --force pour l\'écraser.\n'));
+    process.stderr.write(
+      pc.red("Le fichier existe déjà. Utilisez --force pour l'écraser.\n")
+    );
     return 1;
   }
 

@@ -9,20 +9,23 @@ describe('reporter', () => {
       expected: 'number',
       received: 'string',
       path: ['PORT'],
-      message: 'Expected number, received string'
-    } as z.ZodIssue
+      message: 'Expected number, received string',
+    } as z.ZodIssue,
   ];
 
   it('renderJson devrait avoir une structure stable', () => {
     const output = renderJson({ ok: false, issues: mockIssues });
     expect(JSON.parse(output)).toMatchObject({
       success: false,
-      errors: expect.any(Array)
+      errors: expect.any(Array),
     });
   });
 
   it('renderHuman devrait inclure le nom de la variable', () => {
-    const output = renderHuman({ ok: false, issues: mockIssues }, { color: false });
+    const output = renderHuman(
+      { ok: false, issues: mockIssues },
+      { color: false }
+    );
     expect(output).toContain('PORT');
     expect(output).toContain('Expected number');
   });

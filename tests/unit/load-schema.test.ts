@@ -10,21 +10,24 @@ describe('loadSchema', () => {
   beforeEach(() => vol.reset());
 
   it('devrait charger un schéma valide', async () => {
-    const validSchema = { $version: "1", vars: { PORT: { type: "number" } } };
+    const validSchema = { $version: '1', vars: { PORT: { type: 'number' } } };
     vol.writeFileSync('/schema.json', JSON.stringify(validSchema));
 
     const config = await loadSchema('/schema.json');
-    expect(config.$version).toBe("1");
+    expect(config.$version).toBe('1');
   });
 
-  it('devrait jeter IoError si le fichier n\'existe pas', async () => {
+  it("devrait jeter IoError si le fichier n'existe pas", async () => {
     await expect(loadSchema('/void.json')).rejects.toThrow(IoError);
   });
 
   it('devrait jeter ConfigError si le nom de variable est invalide', async () => {
-    const badSchema = { $version: "1", vars: { "petit_port": { type: "number" } } };
+    const badSchema = {
+      $version: '1',
+      vars: { petit_port: { type: 'number' } },
+    };
     vol.writeFileSync('/bad.json', JSON.stringify(badSchema));
-    
+
     await expect(loadSchema('/bad.json')).rejects.toThrow(ConfigError);
   });
 });

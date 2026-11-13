@@ -2,13 +2,20 @@
 import pc from 'picocolors';
 import type { ValidationResult } from './validate-env.js';
 
-export function renderHuman(result: ValidationResult, options: { color: boolean }): string {
+export function renderHuman(
+  result: ValidationResult,
+  options: { color: boolean }
+): string {
   if (result.ok) {
-    return options.color ? pc.green('Validation réussie !') : 'Validation réussie !';
+    return options.color
+      ? pc.green('Validation réussie !')
+      : 'Validation réussie !';
   }
 
   const lines: string[] = [];
-  lines.push(options.color ? pc.red('Échec de validation :') : 'Échec de validation :');
+  lines.push(
+    options.color ? pc.red('Échec de validation :') : 'Échec de validation :'
+  );
 
   const grouped = new Map<string, string[]>();
   for (const issue of result.issues) {

@@ -4,7 +4,11 @@ import { buildValidator } from '../core/build-validator.js';
 import { validateEnv } from '../core/validate-env.js';
 import { renderHuman, renderJson } from '../core/reporter.js';
 
-export async function validateAction(options: { schema: string; env: string; ci: boolean }): Promise<number> {
+export async function validateAction(options: {
+  schema: string;
+  env: string;
+  ci: boolean;
+}): Promise<number> {
   const config = await loadSchema(options.schema);
   const env = await loadEnv(options.env);
   const validator = buildValidator(config);

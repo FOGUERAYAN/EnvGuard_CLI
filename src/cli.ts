@@ -22,20 +22,17 @@ async function main() {
       process.exit(await validateAction(options));
     });
 
-  program
-    .command('diff <file-a> <file-b>')
-    .action(async (a, b) => {
-      process.exit(await diffAction(a, b));
-    });
+  program.command('diff <file-a> <file-b>').action(async (a, b) => {
+    process.exit(await diffAction(a, b));
+  });
 
   program
     .command('init')
-    .option('-f, --force', 'Force l\'écrasement', false)
+    .option('-f, --force', "Force l'écrasement", false)
     .action(async (options) => {
       process.exit(await initAction(options));
     });
 
-  
   process.on('SIGINT', () => process.exit(130));
   process.on('SIGTERM', () => process.exit(143));
 

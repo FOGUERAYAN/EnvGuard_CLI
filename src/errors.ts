@@ -1,23 +1,22 @@
-
 export class ConfigError extends Error {
-    constructor(message: string){
-        super(message);
-        this.message = 'ConfigError';
-    }
+  constructor(message: string) {
+    super(message);
+    this.message = 'ConfigError';
+  }
 }
 
 export class IoError extends Error {
-    constructor(message: string){
-        super(message);
-        this.message = 'IoError';
-    }
+  constructor(message: string) {
+    super(message);
+    this.message = 'IoError';
+  }
 }
 
 export class ValidationFailedError extends Error {
-    constructor(message: string){
-        super(message);
-        this.message = 'ValidationFailedError'
-    }
+  constructor(message: string) {
+    super(message);
+    this.message = 'ValidationFailedError';
+  }
 }
 
 export function mapErrorToExitCode(err: unknown): number {

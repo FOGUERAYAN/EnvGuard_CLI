@@ -32,9 +32,12 @@ function buildVarValidator(spec: VarSpec): z.ZodTypeAny {
       break;
     }
 
-    case 'boolean':
-      validator = z.coerce.boolean();
+    case 'boolean': {
+      validator = z
+        .enum(['true', 'false', '1', '0'])
+        .transform((v) => v === 'true' || v === '1');
       break;
+    }
 
     case 'url':
       validator = z.string().url();
